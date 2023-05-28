@@ -1,0 +1,16 @@
+﻿  niApplication.cpp
+  niEntity.cpp
+  niGraphicDevice_Dx11.cpp
+D:\DX\JEngine\Engine_SOURCE\niGraphicDevice_Dx11.cpp(268,107): warning C4244: '인수': 'float'에서 'UINT8'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  niInput.cpp
+D:\DX\JEngine\Engine_SOURCE\niInput.cpp(68,26): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\DX\JEngine\Engine_SOURCE\niInput.cpp(69,26): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  niMath.cpp
+  niRenderer.cpp
+  niResource.cpp
+  niResources.cpp
+  niTime.cpp
+D:\DX\JEngine\Engine_SOURCE\niTime.cpp(27,29): warning C4244: '초기화 중': 'LONGLONG'에서 'double'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  main.cpp
+  코드를 생성하고 있습니다...
+  Editor_Window.vcxproj -> D:\DX\JEngine\x64\Debug\Editor_Window.exe
