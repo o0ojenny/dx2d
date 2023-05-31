@@ -296,7 +296,7 @@ namespace ni::graphics
 		mContext->PSSetShader(renderer::trianglePSShader, 0, 0);
 
 		// Draw Render Target
-		mContext->Draw(3, 0);
+		mContext->Draw(6, 0);
 
 		// 레더타겟에 있는 이미지를 화면에 그려준다
 		mSwapChain->Present(0, 0);
