@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="JEngine.cpp" />
+    <ClCompile Include="..\Engine_SOURCE\niPlayScene.cpp">
+      <Filter>Contents\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Engine_SOURCE\niCameraScript.cpp">
+      <Filter>Contents\Script</Filter>
+    </ClCompile>
+    <ClCompile Include="niIntroScene.cpp">
+      <Filter>Contents\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="niBossScene.cpp">
+      <Filter>Contents\Scene</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h" />
+    <ClInclude Include="LoadScene.h">
+      <Filter>Contents\Load</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Engine_SOURCE\niPlayScene.h">
+      <Filter>Contents\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Engine_SOURCE\niCameraScript.h">
+      <Filter>Contents\Script</Filter>
+    </ClInclude>
+    <ClInclude Include="niIntroScene.h">
+      <Filter>Contents\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="niBossScene.h">
+      <Filter>Contents\Scene</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Contents">
+      <UniqueIdentifier>{2c539ff0-a243-4521-ab51-2474722550de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\Scene">
+      <UniqueIdentifier>{3f4b08d2-f2ff-44cb-8979-10efd236ab2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\Load">
+      <UniqueIdentifier>{6e3f4635-d530-47bc-83a1-377a48bfb460}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\Script">
+      <UniqueIdentifier>{f39ec414-b2fd-4cee-acbe-26828b8b6c1b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

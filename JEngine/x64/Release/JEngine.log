@@ -1,0 +1,18 @@
+﻿  niApplication.cpp
+  niEntity.cpp
+  niGraphicDevice_Dx11.cpp
+C:\JEngine\Engine_SOURCE\niGraphicDevice_Dx11.cpp(350,107): warning C4244: '인수': 'float'에서 'UINT8'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  niInput.cpp
+C:\JEngine\Engine_SOURCE\niInput.cpp(69,26): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\JEngine\Engine_SOURCE\niInput.cpp(70,26): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  niMath.cpp
+  niMesh.cpp
+  niRenderer.cpp
+C:\JEngine\Engine_SOURCE\niRenderer.cpp(74,57): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  niResource.cpp
+  niResources.cpp
+  niShader.cpp
+  niTime.cpp
+C:\JEngine\Engine_SOURCE\niTime.cpp(27,29): warning C4244: '초기화 중': 'LONGLONG'에서 'double'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  JEngine.cpp
+  JEngine.vcxproj -> C:\JEngine\x64\Release\JEngine.lib

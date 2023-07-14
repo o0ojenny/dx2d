@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <ItemsProjectGuid>{ef382c18-c456-428f-9c15-458a51343df7}</ItemsProjectGuid>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectCapability Include="SourceItemsFromImports" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)CommonInclude.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)niApplication.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)niCamera.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)niComponent.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)niConstantBuffer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)niEntity.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)niEnums.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)niFeed.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)niGameObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)niGraphicDevice_Dx11.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)niGraphics.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)niInput.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)niLayer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)niMaterial.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)niMath.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)JEngine.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)niMesh.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)niMeshRenderer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)niPlayer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)niRenderer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)niResource.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)niResources.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)niCellScene.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)niScene.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)niSceneManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)niScript.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)niShader.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)niTexture.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)niTime.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)niTransform.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)niObject.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)niApplication.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)niCamera.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)niComponent.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)niConstantBuffer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)niEntity.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)niFeed.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)niGameObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)niGraphicDevice_Dx11.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)niInput.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)niLayer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)niMaterial.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)niMath.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)niMesh.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)niMeshRenderer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)niPlayer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)niRenderer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)niResource.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)niResources.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)niCellScene.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)niScene.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)niSceneManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)niScript.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)niShader.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)niTexture.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)niTime.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)niTransform.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)niMath.inl" />
+  </ItemGroup>
+</Project>

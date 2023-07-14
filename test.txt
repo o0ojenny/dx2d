@@ -1,0 +1,6 @@
+./.vs/JEngine/v17/ipch/AutoPCH/318a20ed70691cd4/GUIEDITOR.ipch
+./.vs/JEngine/v17/ipch/AutoPCH/518ba76f99833944/NIOBJECT.ipch
+./.vs/JEngine/v17/ipch/AutoPCH/5eaffa060ca9c2be/JENGINE.ipch
+./.vs/JEngine/v17/ipch/AutoPCH/b37150bfbf2872cc/NIOBJECT.ipch
+./.vs/JEngine/v17/ipch/AutoPCH/d2c5990122471c21/NIRENDERER.ipch
+./.vs/JEngine/v17/ipch/AutoPCH/d3bf22a5718bf459/NIRENDERER.ipch
