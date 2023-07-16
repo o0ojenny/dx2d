@@ -62,8 +62,8 @@ namespace ni
 	{
 		renderer::TransformCB trCB = {};
 		trCB.mWorld = mWorld;
-		trCB.mView = Camera::GetViewMatrix();
-		trCB.mProjection = Camera::GetProjectionMatrix();
+		trCB.mView = Camera::GetGpuViewMatrix();
+		trCB.mProjection = Camera::GetGpuProjectionMatrix();
 		
 		ConstantBuffer* cb = renderer::constantBuffer[(UINT)eCBType::Transform];
 		cb->SetData(&trCB);

@@ -56,6 +56,11 @@ namespace renderer
 			, shader->GetVSCode()
 			, shader->GetInputLayoutAddressOf());
 
+		shader = ni::Resources::Find<Shader>(L"DebugShader");
+		ni::graphics::GetDevice()->CreateInputLayout(arrLayout, 3
+			, shader->GetVSCode()
+			, shader->GetInputLayoutAddressOf());
+
 
 #pragma endregion
 #pragma region Sampler State
@@ -267,22 +272,6 @@ namespace renderer
 	
 	void LoadBuffer()
 	{
-		// Vertex Buffer
-		std::shared_ptr<Mesh> mesh = std::make_shared<Mesh>();
-		Resources::Insert(L"RectMesh", mesh);
-
-		mesh->CreateVertexBuffer(vertexes, 4);
-
-		std::vector<UINT> indexes = {};
-		indexes.push_back(0);
-		indexes.push_back(1);
-		indexes.push_back(2);
-
-		indexes.push_back(0);
-		indexes.push_back(2);
-		indexes.push_back(3);
-		mesh->CreateIndexBuffer(indexes.data(), indexes.size());
-
 		// Constant Buffer
 		constantBuffer[(UINT)eCBType::Transform] = new ConstantBuffer(eCBType::Transform);
 		constantBuffer[(UINT)eCBType::Transform]->Create(sizeof(TransformCB));
@@ -300,43 +289,13 @@ namespace renderer
 		spriteShader->Create(eShaderStage::PS, L"SpritePS.hlsl", "main");
 		ni::Resources::Insert(L"SpriteShader", spriteShader);
 
-		{
-			std::shared_ptr<Texture> texture
-				= Resources::Load<Texture>(L"Background", L"..\\Resources\\Texture\\Background.png");
-
-			std::shared_ptr<Material> spriteMaterial = std::make_shared<Material>();
-			spriteMaterial->SetShader(spriteShader);
-			spriteMaterial->SetTexture(texture);
-			Resources::Insert(L"SpriteMaterial", spriteMaterial);
-		}
-
-		{
-			std::shared_ptr<Texture> texture
-				= Resources::Load<Texture>(L"HP", L"..\\Resources\\Texture\\HP_UI.png");
-			std::shared_ptr<Material> spriteMaterial = std::make_shared<Material>();
-			spriteMaterial->SetShader(spriteShader);
-			spriteMaterial->SetTexture(texture);
-			spriteMaterial->SetRenderingMode(eRenderingMode::Transparent);
-			Resources::Insert(L"SpriteMaterial02", spriteMaterial);
-		}
-		
-		{
-			std::shared_ptr<Texture> texture
-				= Resources::Load<Texture>(L"IntroBackground", L"..\\Resources\\Texture\\IntroBackground.png");
-			std::shared_ptr<Material> spriteMaterial = std::make_shared<Material>();
-			spriteMaterial->SetShader(spriteShader);
-			spriteMaterial->SetTexture(texture);
-			Resources::Insert(L"IntroSpriteMaterial", spriteMaterial);
-		}
-
-		{
-			std::shared_ptr<Texture> texture
-				= Resources::Load<Texture>(L"Title", L"..\\Resources\\Texture\\Title.png");
-			std::shared_ptr<Material> spriteMaterial = std::make_shared<Material>();
-			spriteMaterial->SetShader(spriteShader);
-			spriteMaterial->SetTexture(texture);
-			Resources::Insert(L"TitleSpriteMaterial", spriteMaterial);
-		}
+		std::shared_ptr<Shader> debugShader = std::make_shared<Shader>();
+		debugShader->Create(eShaderStage::VS, L"DebugVS.hlsl", "main");
+		debugShader->Create(eShaderStage::PS, L"DebugPS.hlsl", "main");
+		debugShader->SetTopology(D3D11_PRIMITIVE_TOPOLOGY::D3D_PRIMITIVE_TOPOLOGY_LINESTRIP);
+		debugShader->SetRSState(eRSType::SolidNone);
+		//debugShader->SetDSState(eDSType::NoWrite);
+		ni::Resources::Insert(L"DebugShader", debugShader);
 	}
 
 	void LoadMaterial()
@@ -344,11 +303,32 @@ namespace renderer
 		std::shared_ptr<Shader> spriteShader
 			= Resources::Find<Shader>(L"SpriteShader");
 
-		std::shared_ptr<Texture> texture = Resources::Load<Texture>(L"Background", L"..\\Resources\\Texture\\Background.png");
-		std::shared_ptr<Material> spriteMaterial = std::make_shared<Material>();
-		spriteMaterial->SetShader(spriteShader);
-		spriteMaterial->SetTexture(texture);
-		Resources::Insert(L"SpriteMaterial", spriteMaterial);
+		std::shared_ptr<Texture> texture
+			= Resources::Load<Texture>(L"Background", L"..\\Resources\\Texture\\Background.png");
+
+		std::shared_ptr<Material> material = std::make_shared<Material>();
+		material->SetShader(spriteShader);
+		material->SetTexture(texture);
+		Resources::Insert(L"SpriteMaterial", material);
+
+		texture = Resources::Load<Texture>(L"HP", L"..\\Resources\\Texture\\HP_UI.png");
+		material = std::make_shared<Material>();
+		material->SetShader(spriteShader);
+		material->SetTexture(texture);
+		material->SetRenderingMode(eRenderingMode::Transparent);
+		Resources::Insert(L"SpriteMaterial02", material);
+
+		texture = Resources::Load<Texture>(L"IntroBackground", L"..\\Resources\\Texture\\IntroBackground.png");
+		material = std::make_shared<Material>();
+		material->SetShader(spriteShader);
+		material->SetTexture(texture);
+		Resources::Insert(L"IntroSpriteMaterial", material);
+
+		texture = Resources::Load<Texture>(L"Title", L"..\\Resources\\Texture\\Title.png");
+		material = std::make_shared<Material>();
+		material->SetShader(spriteShader);
+		material->SetTexture(texture);
+		Resources::Insert(L"TitleSpriteMaterial", material);
 
 		/*std::shared_ptr<Shader> gridShader
 			= Resources::Find<Shader>(L"GridShader");
@@ -357,12 +337,12 @@ namespace renderer
 		material->SetShader(gridShader);
 		Resources::Insert(L"GridMaterial", material);*/
 
-		//std::shared_ptr<Shader> debugShader
-		//	= Resources::Find<Shader>(L"DebugShader");
+		std::shared_ptr<Shader> debugShader
+			= Resources::Find<Shader>(L"DebugShader");
 
-		//material = std::make_shared<Material>();
-		//material->SetShader(debugShader);
-		//Resources::Insert(L"DebugMaterial", material);
+		material = std::make_shared<Material>();
+		material->SetShader(debugShader);
+		Resources::Insert(L"DebugMaterial", material);
 	}
 
 	void Initialize()

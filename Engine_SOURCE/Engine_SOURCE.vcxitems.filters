@@ -52,6 +52,9 @@
     <Filter Include="Common\Object">
       <UniqueIdentifier>{436ebcfd-01ab-4dd7-8792-bc1b7f4b24b5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Common\GameObject\Collider">
+      <UniqueIdentifier>{f7a40776-cef0-4b6d-8822-18464781b957}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)CommonInclude.h">
@@ -141,6 +144,12 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)niObject.h">
       <Filter>Common\Object</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)niCollider2D.h">
+      <Filter>Common\GameObject\Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)niCollisionManager.h">
+      <Filter>Common\Scene\Manager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)niMath.cpp">
@@ -215,6 +224,12 @@
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)niMaterial.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)niCamera.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)niCollider2D.cpp">
+      <Filter>Common\GameObject\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)niCollisionManager.cpp">
+      <Filter>Common\Scene\Manager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)niMath.inl">

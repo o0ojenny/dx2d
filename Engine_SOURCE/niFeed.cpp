@@ -17,7 +17,7 @@ namespace ni
 		mFeedInfo.color = Vector4(disColor(genColor), disColor(genColor), disColor(genColor), 1.f);
 		mFeedInfo.scale = Vector4(0.15f, 0.3f, 0.f, 0.f);
 
-		SetObjectInfo(mFeedInfo);
+		//SetObjectInfo(mFeedInfo);
 	}
 
 	Feed::~Feed()

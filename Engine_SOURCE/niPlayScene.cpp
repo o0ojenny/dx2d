@@ -6,6 +6,10 @@
 #include "niCamera.h"
 #include "niCameraScript.h"
 #include "niSceneManager.h"
+#include "niObject.h"
+#include "niRenderer.h"
+#include "niCollider2D.h"
+
 
 
 namespace ni
@@ -19,6 +23,7 @@ namespace ni
 	void PlayScene::Initialize()
 	{
 		{
+			// Background
 			GameObject* background = new GameObject();
 			background->SetName(L"Background");
 			AddGameObject(eLayerType::Background, background);
@@ -34,6 +39,10 @@ namespace ni
 
 			//background->GetComponent<Transform>()->SetPosition(Vector3(0.0f, 0.0f, 1.0001f));
 			//player->GetComponent<Transform>()->SetRotation(Vector3(0.0f, 0.0f, degree));
+		}
+
+		{
+			// Player
 		}
 
 		{
@@ -61,6 +70,7 @@ namespace ni
 		}
 
 		//Main Camera
+		Camera* cameraComp = nullptr;
 		{
 			GameObject* camera = new GameObject();
 			AddGameObject(eLayerType::Player, camera);
@@ -68,6 +78,8 @@ namespace ni
 			Camera* cameraComp = camera->AddComponent<Camera>();
 			cameraComp->TurnLayerMask(eLayerType::UI, false);
 			camera->AddComponent<CameraScript>();
+			renderer::cameras.push_back(cameraComp);
+			renderer::mainCamera = cameraComp;
 		}
 
 		//UI Camera
@@ -96,6 +108,19 @@ namespace ni
 
 	void PlayScene::LateUpdate()
 	{
+		Vector3 pos(800, 450, 0.0f);
+		Vector3 pos2(800, 450, 1000.0f);
+		Viewport viewport;
+		viewport.width = 1600.0f;
+		viewport.height = 900.0f;
+		viewport.x = 0;
+		viewport.y = 0;
+		viewport.minDepth = 0.0f;
+		viewport.maxDepth = 1.0f;
+
+		pos = viewport.Unproject(pos, Camera::GetGpuProjectionMatrix(), Camera::GetGpuViewMatrix(), Matrix::Identity);
+		pos2 = viewport.Unproject(pos2, Camera::GetGpuProjectionMatrix(), Camera::GetGpuViewMatrix(), Matrix::Identity);
+
 		Scene::LateUpdate();
 	}
 
