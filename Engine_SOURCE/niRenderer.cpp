@@ -311,16 +311,11 @@ namespace renderer
 		material->SetTexture(texture);
 		Resources::Insert(L"SpriteMaterial", material);
 
-<<<<<<< HEAD
 		texture = Resources::Load<Texture>(L"HPFull", L"..\\Resources\\Texture\\HPUI_Full.png");
-=======
-		texture = Resources::Load<Texture>(L"HP", L"..\\Resources\\Texture\\HP_UI.png");
->>>>>>> 0cce9ab6c2137beda866605cf08b464907cb6728
 		material = std::make_shared<Material>();
 		material->SetShader(spriteShader);
 		material->SetTexture(texture);
 		material->SetRenderingMode(eRenderingMode::Transparent);
-<<<<<<< HEAD
 		Resources::Insert(L"HPFullSpriteMaterial", material);
 
 		texture = Resources::Load<Texture>(L"HPHalf", L"..\\Resources\\Texture\\HPUI_Half.png");
@@ -329,37 +324,35 @@ namespace renderer
 		material->SetTexture(texture);
 		material->SetRenderingMode(eRenderingMode::Transparent);
 		Resources::Insert(L"HPHalfSpriteMaterial", material);
-=======
-		Resources::Insert(L"SpriteMaterial02", material);
->>>>>>> 0cce9ab6c2137beda866605cf08b464907cb6728
 
 		texture = Resources::Load<Texture>(L"IntroBackground", L"..\\Resources\\Texture\\IntroBackground.png");
 		material = std::make_shared<Material>();
 		material->SetShader(spriteShader);
 		material->SetTexture(texture);
+		material->SetRenderingMode(eRenderingMode::Transparent);
 		Resources::Insert(L"IntroSpriteMaterial", material);
 
 		texture = Resources::Load<Texture>(L"Title", L"..\\Resources\\Texture\\Title.png");
 		material = std::make_shared<Material>();
 		material->SetShader(spriteShader);
 		material->SetTexture(texture);
+		material->SetRenderingMode(eRenderingMode::Transparent);
 		Resources::Insert(L"TitleSpriteMaterial", material);
-<<<<<<< HEAD
 
 		texture = Resources::Load<Texture>(L"Knight", L"..\\Resources\\Texture\\Knight.png");
 		material = std::make_shared<Material>();
 		material->SetShader(spriteShader);
 		material->SetTexture(texture);
+		material->SetRenderingMode(eRenderingMode::Transparent);
 		Resources::Insert(L"KnightSpriteMaterial", material);
 
 		texture = Resources::Load<Texture>(L"GameHUD", L"..\\Resources\\Texture\\GameHUD.png");
 		material = std::make_shared<Material>();
 		material->SetShader(spriteShader);
 		material->SetTexture(texture);
+		material->SetRenderingMode(eRenderingMode::Transparent);
 		Resources::Insert(L"GameHUDSpriteMaterial", material);
 		
-=======
->>>>>>> 0cce9ab6c2137beda866605cf08b464907cb6728
 
 		/*std::shared_ptr<Shader> gridShader
 			= Resources::Find<Shader>(L"GridShader");

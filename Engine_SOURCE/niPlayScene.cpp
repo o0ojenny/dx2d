@@ -40,22 +40,12 @@ namespace ni
 
 		{
 			// Player
-<<<<<<< HEAD
 			GameObject* player = object::Instantiate<GameObject>(Vector3(0.0f, -1.0f, 1.00001f), eLayerType::Player);
 			//player->GetComponent<Transform>()->SetScale(Vector3(0.5f, 0.35f, 1.0f));
 			player->SetName(L"Knight");
 			Collider2D* cd = player->AddComponent<Collider2D>();
 
 			MeshRenderer* mr = player->AddComponent<MeshRenderer>();
-=======
-		}
-
-		{
-			GameObject* hpui = new GameObject();
-			hpui->SetName(L"HP");
-			AddGameObject(eLayerType::UI, hpui);
-			MeshRenderer* mr = hpui->AddComponent<MeshRenderer>();
->>>>>>> 0cce9ab6c2137beda866605cf08b464907cb6728
 			mr->SetMesh(Resources::Find<Mesh>(L"RectMesh"));
 			mr->SetMaterial(Resources::Find<Material>(L"KnightSpriteMaterial"));
 
@@ -148,16 +138,13 @@ namespace ni
 			GameObject* camera = new GameObject();
 			AddGameObject(eLayerType::Player, camera);
 			camera->GetComponent<Transform>()->SetPosition(Vector3(0.0f, 0.0f, -10.0f));
-			Camera* cameraComp = camera->AddComponent<Camera>();
+			cameraComp = camera->AddComponent<Camera>();
 			cameraComp->TurnLayerMask(eLayerType::UI, false);
 			cameraComp->TurnLayerMask(eLayerType::Background, true);
 			camera->AddComponent<CameraScript>();
 			renderer::cameras.push_back(cameraComp);
 			renderer::mainCamera = cameraComp;
-<<<<<<< HEAD
 			//camera->AddComponent<CameraScript>();
-=======
->>>>>>> 0cce9ab6c2137beda866605cf08b464907cb6728
 		}
 
 		//UI Camera
@@ -167,7 +154,7 @@ namespace ni
 			camera->GetComponent<Transform>()->SetPosition(Vector3(0.0f, 0.0f, -10.0f));
 			Camera* cameraComp = camera->AddComponent<Camera>();
 			cameraComp->TurnLayerMask(eLayerType::Player, false);
-			//cameraComp->TurnLayerMask(eLayerType::Background, false);
+			cameraComp->TurnLayerMask(eLayerType::Background, false);
 			//camera->AddComponent<CameraScript>();
 		}
 
