@@ -13,7 +13,7 @@ namespace ni
 		{
 			Active,
 			Paused,
-			Dead
+			Dead,
 		};
 
 		GameObject();
@@ -23,12 +23,6 @@ namespace ni
 		virtual void Update();
 		virtual void LateUpdate();
 		virtual void Render();
-
-		eState GetState() { return mState; }
-		void SetState(eState state) { mState = state; }
-
-		renderer::ObjectInfo GetObjectInfo() { return mObjectInfo; }
-		void SetObjectInfo(renderer::ObjectInfo objectinfo) { mObjectInfo = objectinfo; }
 
 		template <typename T>
 		T* GetComponent()
@@ -40,20 +34,54 @@ namespace ni
 				if (component != nullptr)
 					return component;
 			}
+
+			for (Script* script : mScripts)
+			{
+				component = dynamic_cast<T*>(script);
+				if (component != nullptr)
+					return component;
+			}
 			return nullptr;
 		}
 
-		template<typename T>
+		template <typename T>
+		const std::vector<T*>& GetComponents()
+		{
+			std::vector<T*> comps;
+
+			T* component;
+			for (Component* comp : mComponents)
+			{
+				component = dynamic_cast<T*>(comp);
+				if (component != nullptr)
+					comps.push_back(component);
+			}
+			
+			for (Script* script : mScripts)
+			{
+				component = dynamic_cast<T*>(script);
+				if (component != nullptr)
+					comps.push_back(component);
+			}
+			return comps;
+		}
+
+		template <typename T>
 		T* AddComponent()
 		{
 			T* comp = new T();
 			
 			Component* buff = dynamic_cast<Component*>(comp);
+			Script* script = dynamic_cast<Script*>(buff);
 
 			if (buff == nullptr)
 				return nullptr;
+
+			if (script == nullptr)
+				mComponents.push_back(buff);
+			else
+				mScripts.push_back(script);
 			
-			mComponents.push_back(buff);
 			comp->SetOwner(this);
 
 			return comp;

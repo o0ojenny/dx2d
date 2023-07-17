@@ -13,11 +13,14 @@ namespace gui
 	}
 	void EditorObject::Update()
 	{
+		GameObject::Update();
 	}
 	void EditorObject::LateUpdate()
 	{
+		GameObject::LateUpdate();
 	}
 	void EditorObject::Render()
 	{
+		GameObject::Render();
 	}
 }

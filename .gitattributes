@@ -5,3 +5,4 @@
 .vs/JEngine/v17/ipch/AutoPCH/b37150bfbf2872cc/NIOBJECT.ipch filter=lfs diff=lfs merge=lfs -text
 .vs/JEngine/v17/ipch/AutoPCH/d2c5990122471c21/NIRENDERER.ipch filter=lfs diff=lfs merge=lfs -text
 .vs/JEngine/v17/ipch/AutoPCH/d3bf22a5718bf459/NIRENDERER.ipch filter=lfs diff=lfs merge=lfs -text
+x64/Debug/Editor_Window.pdb filter=lfs diff=lfs merge=lfs -text

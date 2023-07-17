@@ -7,6 +7,7 @@ namespace ni::enums
 		None,
 		Transform,
 		Mesh,
+		Collider2D,
 		Particle,
 		MeshRenderer,
 		Script,
@@ -20,7 +21,7 @@ namespace ni::enums
 		Player, 
 		Monster,
 		UI,
-		End,
+		End = 16,
 	};
 
 	enum class eResourceType

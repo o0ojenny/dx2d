@@ -8,7 +8,7 @@
 namespace ni::object
 {
 	template <typename T>
-	static __forceinline T* Instatiate(enums::eLayerType layer)
+	static __forceinline T* Instantiate(enums::eLayerType layer)
 	{
 		T* gameObj = new T();
 		Scene* scene = SceneManager::GetActiveScene();
@@ -21,7 +21,7 @@ namespace ni::object
 	static __forceinline T* Instantiate(Vector3 pos, enums::eLayerType layer)
 	{
 		T* gameObj = new T();
-		Transform tr = gameObj->GetComponent<Transform>();
+		Transform* tr = gameObj->GetComponent<Transform>();
 		tr->SetPosition(pos);
 
 		Scene* scene = SceneManager::GetActiveScene();
@@ -31,7 +31,7 @@ namespace ni::object
 	}
 
 	template <typename T>
-	static __forceinline T* Instatiate(Vector3 pos, Vector3 rotate, enums::eLayerType layer)
+	static __forceinline T* Instantiate(Vector3 pos, Vector3 rotate, enums::eLayerType layer)
 	{
 		T* gameObj = new T();
 		Transform* tr = gameObj->GetComponent<Transform>();
@@ -63,6 +63,5 @@ namespace ni::object
 	{
 		gameObj->SetState(ni::GameObject::eState::Dead);
 	}
-
 
 }

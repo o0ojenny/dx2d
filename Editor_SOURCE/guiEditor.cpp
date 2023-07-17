@@ -61,10 +61,12 @@ namespace gui
 			obj->Render();
 		}
 
-		for (const ni::graphics::DebugMesh& mesh : renderer::debugmeshs)
+		for (const ni::graphics::DebugMesh& mesh : renderer::debugMeshes)
 		{
 			DebugRender(mesh);
 		}
+
+		renderer::debugMeshes.clear();
 	}
 	void Editor::Release()
 	{
@@ -109,7 +111,7 @@ namespace gui
 		ni::Camera::SetGpuViewMatrix(mainCamera->GetViewMatrix());
 		ni::Camera::SetGpuProjectionMatrix(mainCamera->GetProjectionMatrix());
 
-		debugObj->Render():
+		debugObj->Render();
 
 	}
 }

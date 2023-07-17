@@ -16,8 +16,10 @@ namespace gui
 	}
 	void DebugObject::LateUpdate()
 	{
+		GameObject::LateUpdate();
 	}
 	void DebugObject::Render()
 	{
+		GameObject::Render();
 	}
 }

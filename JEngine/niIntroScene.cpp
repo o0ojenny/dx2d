@@ -70,7 +70,7 @@ namespace ni
 			camera->GetComponent<Transform>()->SetPosition(Vector3(0.0f, 0.0f, -10.0f));
 			Camera* cameraComp = camera->AddComponent<Camera>();
 			cameraComp->TurnLayerMask(eLayerType::Player, false);
-			//camera->AddComponent<CameraScript>();
+			camera->AddComponent<CameraScript>();
 		}
 		// Button
 	}
